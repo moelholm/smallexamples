@@ -1,4 +1,4 @@
-# Arquillian / Wildfly Example: hello-arquillian-wildfly-multideployment
+# hello-arquillian-wildfly-multideployment
 
 This project shows how to run an arquillian test towards an existing EAR file in WildFly 8.2.
 
