@@ -32,7 +32,7 @@ public class HelloConcurrencyBeanIntegrationTest {
 
         try {
 
-            helloBean.sayHelloUsingReadLockFriend("duke");
+            helloBean.sayHello("duke");
 
         } catch (EJBTransactionRolledbackException ere) {
 

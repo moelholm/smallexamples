@@ -12,8 +12,11 @@ public class HelloConcurrencyBean extends HelloAbstractConcurrencyBean {
     @EJB
     private HelloConcurrencyFriendBean readLockFriend;
 
-    public String sayHelloUsingReadLockFriend(String caller) {
-        
+    public String sayHello(String caller) {
+
+        // The following call actually performs a loopback call (re-entrant)
+        // to the inherited 'format' method (which has .... Lock(WRITE))
+
         String greeting = readLockFriend.sayHello(caller);
 
         return greeting;
