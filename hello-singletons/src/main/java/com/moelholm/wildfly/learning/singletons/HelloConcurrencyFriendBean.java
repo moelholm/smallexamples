@@ -4,7 +4,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 @Stateless
-public class HelloConcurrencyReadLockFriendBean {
+public class HelloConcurrencyFriendBean {
 
     @EJB
     private HelloConcurrencyBean helloConcurrencyBean;

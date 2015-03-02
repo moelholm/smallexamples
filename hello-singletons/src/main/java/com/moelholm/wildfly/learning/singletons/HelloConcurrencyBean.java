@@ -10,7 +10,7 @@ import javax.ejb.Singleton;
 public class HelloConcurrencyBean extends HelloAbstractConcurrencyBean {
 
     @EJB
-    private HelloConcurrencyReadLockFriendBean readLockFriend;
+    private HelloConcurrencyFriendBean readLockFriend;
 
     public String sayHelloUsingReadLockFriend(String caller) {
         
