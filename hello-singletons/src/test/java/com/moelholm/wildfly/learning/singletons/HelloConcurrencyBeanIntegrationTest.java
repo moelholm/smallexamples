@@ -1,6 +1,7 @@
 package com.moelholm.wildfly.learning.singletons;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import javax.ejb.EJB;
 import javax.ejb.EJBTransactionRolledbackException;
@@ -33,6 +34,8 @@ public class HelloConcurrencyBeanIntegrationTest {
         try {
 
             helloBean.sayHello("duke");
+
+            fail(String.format("Expected %s to be thrown!", EJBTransactionRolledbackException.class.getSimpleName()));
 
         } catch (EJBTransactionRolledbackException ere) {
 
