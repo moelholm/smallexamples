@@ -20,6 +20,6 @@ You can get output such as:
            41 ms - AuditLoggerBean.auditLogStuff()
     ------------------------------------------------------------------------------------
 
-Can be useful if you don't have lightwight profiling enabled via a Java agent technology. 
+Can be useful if you don't have lightweight profiling enabled via a Java agent technology. 
 
 The above output can be directed into a log file upon selected thresholds. For example, if a request takes more than 5 seconds - then, and only then, dump it's callchain (the above) to the log file.
