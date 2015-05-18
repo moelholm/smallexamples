@@ -5,18 +5,18 @@ import java.util.concurrent.TimeUnit;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.moelholm.profiling.Service;
+import com.moelholm.profiling.LogMethodExecutionTime;
 
 @Stateless
 public class PresentationGreetingBean {
 
     @Inject
     private BusinessServiceGreetingBean serviceBean;
-    
+
     @Inject
     private AuditLoggerBean auditLoggerBean;
 
-    @Service
+    @LogMethodExecutionTime
     public String sayHello(String caller) {
 
         String greeting = serviceBean.sayHello(caller);
@@ -28,7 +28,7 @@ public class PresentationGreetingBean {
         }
 
         auditLoggerBean.auditLogStuff("Greeting about to be sent to caller");
-        
+
         return greeting;
     }
 

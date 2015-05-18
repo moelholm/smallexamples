@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import com.moelholm.importantstuff.BusinessServiceGreetingBean;
 import com.moelholm.importantstuff.PresentationGreetingBean;
 import com.moelholm.interceptorsupport.MethodInvocationNotifier;
-import com.moelholm.profiling.Service;
+import com.moelholm.profiling.LogMethodExecutionTime;
 import com.moelholm.profiling.timingsupport.MethodExecutionLogger;
 
 @RunWith(WildFlyEmbeddedArquillianRunner.class)
@@ -27,7 +27,7 @@ public class MethodTracerIntegrationTest {
         return ShrinkWrap.create(JavaArchive.class) //
                 .addClass(WildFlyEmbeddedArquillianRunner.class)//
                 .addPackage(BusinessServiceGreetingBean.class.getPackage()) //
-                .addPackage(Service.class.getPackage()) //
+                .addPackage(LogMethodExecutionTime.class.getPackage()) //
                 .addPackage(MethodExecutionLogger.class.getPackage())//
                 .addPackage(MethodInvocationNotifier.class.getPackage());
     }

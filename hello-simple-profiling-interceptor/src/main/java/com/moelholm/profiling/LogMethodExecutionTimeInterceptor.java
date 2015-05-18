@@ -15,9 +15,9 @@ import com.moelholm.profiling.timingsupport.MethodExecutionLogger;
  * @author nickymolholm
  */
 @Priority(0)
-@Service
+@LogMethodExecutionTime
 @Interceptor
-public class ServiceInterceptor {
+public class LogMethodExecutionTimeInterceptor {
 
     private static final MethodInvocationNotifier METHOD_TRACER = new MethodInvocationNotifier(new MethodExecutionLogger());
 

@@ -3,7 +3,7 @@ package com.moelholm.importantstuff;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-import com.moelholm.profiling.Service;
+import com.moelholm.profiling.LogMethodExecutionTime;
 
 @Stateless
 public class BusinessServiceGreetingBean {
@@ -11,7 +11,7 @@ public class BusinessServiceGreetingBean {
     @Inject
     private GreetingRepositoryBean greetingRepositoryBean;
 
-    @Service
+    @LogMethodExecutionTime
     public String sayHello(String caller) {
 
         String greeting = greetingRepositoryBean.getGreeting(caller);

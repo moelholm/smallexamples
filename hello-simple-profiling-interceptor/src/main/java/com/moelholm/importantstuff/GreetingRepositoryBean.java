@@ -4,10 +4,10 @@ import java.util.concurrent.TimeUnit;
 
 import javax.ejb.Stateless;
 
-import com.moelholm.profiling.Service;
+import com.moelholm.profiling.LogMethodExecutionTime;
 
 @Stateless
-@Service
+@LogMethodExecutionTime
 public class GreetingRepositoryBean {
 
     public String getGreeting(String caller) {
