@@ -1,4 +1,4 @@
-package com.moelholm.wildfly.learning.singletons;
+package com.moelholm.profiling;
 
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.runners.model.InitializationError;

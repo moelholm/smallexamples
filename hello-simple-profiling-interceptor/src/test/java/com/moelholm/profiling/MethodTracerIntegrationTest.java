@@ -1,4 +1,4 @@
-package com.moelholm.wildfly.learning.singletons;
+package com.moelholm.profiling;
 
 import static org.junit.Assert.assertEquals;
 
