@@ -1,0 +1,3 @@
+# WildFly WebApp with simple URL rewriting
+
+....
