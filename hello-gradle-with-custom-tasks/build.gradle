@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+version = '1.0'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -10,4 +12,22 @@ repositories {
 dependencies {
     compile 'commons-lang:commons-lang:2.6'
     testCompile 'junit:junit:4.12'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+// --- HERE goes the custom part
+
+task helloworld << {
+	(1..10).each {System.out.print("-")};println "";	
+	
+	println "hello"
+	
+	(1..10).each {System.out.print("-")};println "";
 }
