@@ -33,9 +33,9 @@ mainClassName = 'hello.HelloApp'
 // ----------------------------------------------------------------------
 
 task helloworld << {
-	(1..10).each {print("-")};println "";	
+	10.times{print("-")};println "";	
 	
 	println "hello"
 	
-	(1..10).each {print("-")};println "";
+	10.times{print("-")};println "";
 }
