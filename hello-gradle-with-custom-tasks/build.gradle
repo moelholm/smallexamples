@@ -22,6 +22,10 @@ uploadArchives {
     }
 }
 
+apply plugin: 'application'
+
+mainClassName = 'hello.HelloApp'
+
 // ----------------------------------------------------------------------
 //
 // Custom tasks
