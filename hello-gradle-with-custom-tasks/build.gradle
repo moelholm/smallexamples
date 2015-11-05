@@ -29,9 +29,9 @@ uploadArchives {
 // ----------------------------------------------------------------------
 
 task helloworld << {
-	(1..10).each {System.out.print("-")};println "";	
+	(1..10).each {print("-")};println "";	
 	
 	println "hello"
 	
-	(1..10).each {System.out.print("-")};println "";
+	(1..10).each {print("-")};println "";
 }
