@@ -34,20 +34,20 @@ mainClassName = 'hello.HelloApp'
 
 task helloworld << {
 
-	10.times{print("-")};println "";	
+	10.times{ print "-" }; println "";	
 	
 	println "hello"
 	
-	10.times{print("-")};println "";
+	10.times{ print "-" }; println "";
 	
 }
 
 task dependsonhelloworld(dependsOn:helloworld) << {
 
-	10.times{print("-")};println "";
+	10.times{ print "-" }; println "";
 	
 	println "Hi, I depend on helloworld"
 	
-	10.times{print("-")};println "";
+	10.times{ print "-" }; println "";
 	
 }
