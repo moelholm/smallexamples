@@ -1,0 +1,41 @@
+apply plugin: 'java'
+
+version = '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'commons-lang:commons-lang:2.6'
+    testCompile 'junit:junit:4.12'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+apply plugin: 'application'
+
+mainClassName = 'hello.HelloApp'
+
+// ----------------------------------------------------------------------
+//
+// Custom tasks
+//
+// ----------------------------------------------------------------------
+
+task helloworld << {
+	(1..10).each {print("-")};println "";	
+	
+	println "hello"
+	
+	(1..10).each {print("-")};println "";
+}
