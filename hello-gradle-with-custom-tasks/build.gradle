@@ -39,3 +39,12 @@ task helloworld << {
 	
 	(1..10).each {print("-")};println "";
 }
+
+task dependsonhelloworld(dependsOn:helloworld) << {
+
+	(1..10).each {print("-")};println "";
+	
+	println "Hi, I depend on helloworld"
+	
+	(1..10).each {print("-")};println "";
+}
