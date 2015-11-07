@@ -27,17 +27,33 @@ apply plugin: 'application'
 mainClassName = 'hello.HelloApp'
 
 // ----------------------------------------------------------------------
-//
-// Custom tasks
-//
+// BUILD LIFECYCLE CHANGES
+// ----------------------------------------------------------------------
+
+compileJava.doFirst {
+	printBlock "Hello, I am running BEFORE compile :)"
+}
+
+compileJava.doLast {
+	printBlock "Hello, I am running AFTER compile :)"
+}
+
+// ----------------------------------------------------------------------
+// TASKS
 // ----------------------------------------------------------------------
 
 task helloworld << {
+	printBlock "hello";
+}
 
+// ----------------------------------------------------------------------
+// METHODS
+// ----------------------------------------------------------------------
+
+void printBlock( what ) {
 	10.times{ print "-" }; println "";	
 	
-	println "hello"
+	println what
 	
 	10.times{ print "-" }; println "";
-	
-}
+} 
