@@ -12,6 +12,7 @@ Run:
 Open a browser at: http://localhost:8080/slowgreetings/duke 
 
 Open a browser at: http://localhost:8080/dump 
+
 ( you have less than 10 seconds to grab the dump before the previous request finishes )
 
 Search for "duke" in the output. 
