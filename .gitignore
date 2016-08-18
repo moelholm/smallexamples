@@ -7,3 +7,5 @@ hello-reactive-spring/.idea
 hello-reactive-spring/build
 hello-springboot-webservlet/.idea
 hello-springboot-webservlet/build
+springboot-actuator-custominsight/.idea
+springboot-actuator-custominsight/build
