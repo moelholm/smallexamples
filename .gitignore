@@ -9,3 +9,5 @@ hello-springboot-webservlet/.idea
 hello-springboot-webservlet/build
 springboot-actuator-custominsight/.idea
 springboot-actuator-custominsight/build
+springboot-actuator-sessionsmvcendpoint/.idea
+springboot-actuator-sessionsmvcendpoint/build
