@@ -72,9 +72,9 @@ public class SessionsActuatorEndpoint extends AbstractMvcEndpoint {
         }
 
         private String formatDateTime(long epoch) {
-            Instant i = Instant.ofEpochMilli(epoch);
-            ZonedDateTime z = ZonedDateTime.ofInstant(i, ZoneId.systemDefault());
-            return z.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+            Instant instant = Instant.ofEpochMilli(epoch);
+            ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
+            return zonedDateTime.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
         }
     }
 

@@ -1,4 +1,4 @@
-# Spring Boot 1.4 :: SessionsMvcEndpoint Actuator Endpoint
+# Spring Boot 1.4 :: SessionsActuatorEndpoint Actuator Endpoint
 
 This example includes a Spring Boot Actuator endpoint that exposes the currently active HttpSessions.
 
