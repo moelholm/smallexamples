@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ThreadLoggingInitializer {
 
-    private static org.slf4j.Logger LOG = LoggerFactory.getLogger(ThreadLoggingSupport.class);
+    private static org.slf4j.Logger LOG = LoggerFactory.getLogger(ThreadLoggingInitializer.class);
 
     @EventListener
     public void handleContextRefresh(ContextRefreshedEvent event) {
