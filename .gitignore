@@ -13,3 +13,4 @@ springboot-actuator-sessionsmvcendpoint/.idea
 springboot-actuator-sessionsmvcendpoint/build
 springboot-logging-threadspecific/.idea
 springboot-logging-threadspecific/build
+logging-custom-loggerfactory/.idea
