@@ -29,6 +29,7 @@ repositories {
 
 
 dependencies {
+    compile "org.springframework:spring-tx" // Don't ask ( ... okay: it's for a bug in IntelliJ )
     compile 'org.springframework.boot:spring-boot-starter-web'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
