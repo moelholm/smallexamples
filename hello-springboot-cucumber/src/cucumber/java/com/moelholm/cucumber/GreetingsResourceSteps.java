@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,7 +35,7 @@ public class GreetingsResourceSteps {
         .exchange("/greetings/{caller}", HttpMethod.GET, null, String.class, caller);
   }
 
-  @When("I should get response with HTTP status code (.*)")
+  @Then("I should get response with HTTP status code (.*)")
   public void shouldGetResponseWithHttpStatusCode(int statusCode) {
     assertThat(response.getStatusCodeValue()).isEqualTo(statusCode);
   }
