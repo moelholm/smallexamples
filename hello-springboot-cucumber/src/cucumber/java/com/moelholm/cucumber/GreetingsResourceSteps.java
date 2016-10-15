@@ -35,13 +35,13 @@ public class GreetingsResourceSteps {
         .exchange("/greetings/{caller}", HttpMethod.GET, null, String.class, caller);
   }
 
-  @Then("I should get response with HTTP status code (.*)")
+  @Then("I should get a response with HTTP status code (.*)")
   public void shouldGetResponseWithHttpStatusCode(int statusCode) {
     assertThat(response.getStatusCodeValue()).isEqualTo(statusCode);
   }
 
-  @And("It should contain the message (.*)")
-  public void shouldContainTheMessage(String message) {
+  @And("The response should contain the message (.*)")
+  public void theResponseShouldContainTheMessage(String message) {
     assertThat(response.getBody()).isEqualTo(message);
   }
 
