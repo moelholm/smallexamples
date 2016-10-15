@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.github.samueltbrown:gradle-cucumber-plugin:0.9")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'com.github.samueltbrown.cucumber'
+
+jar {
+    baseName = 'hello-springboot-cucumber'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+
+    cucumberCompile 'info.cukes:cucumber-java:1.2.5'
+    cucumberCompile 'info.cukes:cucumber-junit:1.2.5'
+    cucumberCompile 'info.cukes:cucumber-spring:1.2.5'
+}
+
+cucumber {
+    formats = ['pretty', 'json:build/cucumber/cucumber.json', 'junit:build/cucumber/cucumber.xml', 'html:build/cucumber/html']
+    tags = ['~@Ignore']
+}
