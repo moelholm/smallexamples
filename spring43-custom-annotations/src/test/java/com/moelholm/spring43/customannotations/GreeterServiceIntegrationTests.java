@@ -39,7 +39,7 @@ public class GreeterServiceIntegrationTests {
     String caller = null;
 
     // When
-    String greeting = greeterService.sayHello(caller);
+    greeterService.sayHello(caller);
 
     // Then
     // ( kapOOOf )
