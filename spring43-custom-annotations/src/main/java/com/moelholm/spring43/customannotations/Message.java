@@ -16,8 +16,8 @@ public class Message {
     this.messageKey = messageKey;
   }
 
-  public String format(String caller) {
+  public String format(Object ... args) {
     Locale locale = LocaleContextHolder.getLocale();
-    return messageSource.getMessage(messageKey, new Object[]{caller}, locale);
+    return messageSource.getMessage(messageKey, args, locale);
   }
 }
