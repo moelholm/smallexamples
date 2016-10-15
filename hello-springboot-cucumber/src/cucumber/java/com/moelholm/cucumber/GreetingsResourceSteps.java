@@ -17,7 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 public class GreetingsResourceSteps {
 
   @Autowired
-  protected TestRestTemplate restTemplate;
+  private TestRestTemplate restTemplate;
 
   private String caller; // input
 
