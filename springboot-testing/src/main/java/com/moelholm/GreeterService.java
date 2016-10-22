@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreeterService {
 
-  public String sayHello(String duke) {
-    return String.format("Hello World, %s", duke);
+  public String sayHello(String caller) {
+    return String.format("Hello World, %s", caller);
   }
 
 }
