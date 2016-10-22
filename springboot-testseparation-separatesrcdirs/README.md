@@ -1,13 +1,13 @@
-# Spring Boot + Gradle : Name based test separation
+# Spring Boot + Gradle : Different source directories based test separation
 
 This example illustrates a simple approach to partition your tests into _unit tests_ and _integration tests_.
 
 This approach:
-- allows you to keep all tests in the same source directory `src/test/java`
-- is name based: integration tests are suffixed with `IntegrationTests`
-- uses Gradle to partition the tests using _include_/_exclude_ name filters
+- expects unit tests to be placed in the source directory `src/test/java`
+- expects integration tests to be placed in the source directory `src/integrationTest/java`
+- uses Gradle to honor the test directory separation
 
-See `src/test/java` and `build.gradle`
+See `src/test/java`, `src/integrationTest/java` and `build.gradle`
 
 
 ### Running unit tests
