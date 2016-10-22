@@ -47,7 +47,7 @@ sourceSets {
             // So that we can compile against the libs used by the unit test classes (JUnit, Spring test support, ...):
             compileClasspath += test.compileClasspath
 
-            // So that test- and business classes can be used at runtime
+            // So that test- and business classes can be used at runtime:
             runtimeClasspath += test.runtimeClasspath
 
         }
