@@ -1,0 +1,65 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'springboot-testseparation-separatesrcdirs'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    // So that we can use JUnit and the test dependencies pulled in by Spring Boot
+    // from 'src/test/java' as well as 'src/integrationTest/java':
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+sourceSets {
+    // So that we can place source code in 'src/integrationTest/java':
+    integrationTest {
+        java {
+
+            // So that we can compile against the business classes (GreeterService, ...):
+            compileClasspath += main.output
+            // So that we can compile against the libs used by the business classes:
+            compileClasspath += main.compileClasspath
+
+            // So that we can compile against the unit test classes (custom utilities fx):
+            compileClasspath += test.output
+            // So that we can compile against the libs used by the unit test classes (JUnit, Spring test support, ...):
+            compileClasspath += test.compileClasspath
+
+            // So that test- and business classes can be used at runtime
+            runtimeClasspath += test.runtimeClasspath
+
+        }
+    }
+}
+
+task integrationTest(type: Test) {
+
+    // So that Gradle knows where the integration test classes are:
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+
+    // So that Gradle knows which runtime class path to use:
+    classpath = sourceSets.integrationTest.runtimeClasspath
+
+}
