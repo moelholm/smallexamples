@@ -1,1 +1,1 @@
-include '00_TheProblem', '01_TheSolution_ByBeanType', '02_TheSolution_ByMemberName', '03_TheSolution_ByQualifier', '04_TheSolution_ByCustomQualifierAnnotation', '05_TheSolution_ByPrimary'
+include '00_TheProblem', '01_TheSolution_ByBeanType', '02_TheSolution_ByMemberName', '03_TheSolution_ByQualifier', '04_TheSolution_ByCustomQualifierAnnotation', '05_TheSolution_ByPrimary', '06_TheSolution_ByProfile'
