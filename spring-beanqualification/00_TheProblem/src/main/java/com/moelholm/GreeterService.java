@@ -13,4 +13,5 @@ public class GreeterService {
     businessEventLogger.log("Sending hello message to %s", caller);
     return String.format("Hello World, %s", caller);
   }
+
 }
