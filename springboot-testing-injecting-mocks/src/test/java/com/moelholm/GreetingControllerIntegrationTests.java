@@ -35,6 +35,7 @@ public class GreetingControllerIntegrationTests {
     // Then
     assertThat(greetingResponse.getStatusCodeValue()).isEqualTo(200);
     assertThat(greetingResponse.getBody()).isEqualTo("Hej världen, Duke");
+
   }
 
 }
