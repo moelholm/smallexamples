@@ -23,7 +23,6 @@ Run tests
     ./gradlew test
     
     
-
 ### About
     
 Look at `build.gradle`. Notice how Hibernate is upgraded to v5.2.3.Final.
