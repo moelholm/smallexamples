@@ -1,11 +1,13 @@
 package com.moelholm;
 
+import static com.moelholm.DateFormatSqlFunctionProvider.formatDate;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,7 +18,7 @@ import java.util.TimeZone;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ActiveProfiles({"utc", "mariadb"})
+@ActiveProfiles({"utc", "mariadb"}) // TIP: Remove 'mariadb' to run with H2 instead
 public class JpaIntegrationTests {
 
   static {
@@ -28,6 +30,9 @@ public class JpaIntegrationTests {
 
   @Autowired
   private JdbcTemplate jdbcTemplate;
+
+  @Autowired
+  private Environment e;
 
   @Test
   public void testJpa() {
@@ -58,7 +63,7 @@ public class JpaIntegrationTests {
     assertThat(fromDatabase.getCreated()).isEqualTo(localDateTime);
 
     // 2) We expect the database to store the date in the GMT timezone ( == UTC )
-    jdbcTemplate.query("select date_format(created, '%Y-%m-%dT%k:%i:%s') from message", rs -> {
+    jdbcTemplate.query("select " + formatDate(e, "created") + " from message", rs -> {
       assertThat(LocalDateTime.parse(rs.getString(1))).isEqualTo(gmtDateTime);
     });
 
