@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+   db:
+     image: mariadb:latest
+     restart: always
+     ports:
+       - "3306:3306"
+     environment:
+       MYSQL_ROOT_PASSWORD: secret

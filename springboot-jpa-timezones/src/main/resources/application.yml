@@ -1,0 +1,32 @@
+spring:
+    jpa:
+        properties:
+            hibernate:
+                show_sql: true
+                use_sql_comments: true
+                format_sql: true
+---
+spring:
+    profiles: utc
+    jpa:
+        properties:
+            hibernate:
+                jdbc:
+                    time_zone: UTC
+---
+spring:
+    profiles: mariadb
+
+    datasource:
+        # serverTimezone affects rs.getTimestamp() without the Calendar argument:
+        # url: jdbc:mysql://localhost:3306/mysql?useLegacyDatetimeCode=false&serverTimezone=GMT-3
+        url: jdbc:mysql://localhost:3306/mysql?useLegacyDatetimeCode=false
+        username: root
+        password: secret
+        driver-class-name: org.mariadb.jdbc.Driver
+
+    jpa:
+        hibernate.ddl-auto: create-drop
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
