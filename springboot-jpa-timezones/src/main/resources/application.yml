@@ -19,8 +19,7 @@ spring:
 
     datasource:
         # serverTimezone affects rs.getTimestamp() without the Calendar argument:
-        # url: jdbc:mysql://localhost:3306/mysql?useLegacyDatetimeCode=false&serverTimezone=GMT-3
-        url: jdbc:mysql://localhost:3306/mysql?useLegacyDatetimeCode=false
+        url: jdbc:mysql://localhost:3306/mysql?useLegacyDatetimeCode=false&serverTimezone=GMT-4
         username: root
         password: secret
         driver-class-name: org.mariadb.jdbc.Driver
