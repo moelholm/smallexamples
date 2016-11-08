@@ -2,7 +2,9 @@
 
 This example shows how you can control the time zone used when saving/loading "temporal" JPA entity properties.
 
-It basically illustrates how to use Hibernate specific configuration to force dates to be serialized in UTC/GMT.
+More specifically it illustrates how to use Hibernate specific configuration to force dates to be serialized in UTC/GMT.
+
+This is an alternative to putting the entire JVM into UTC/GMT ...fx via `TimeZone.setDefault(TimeZone.getTimeZone("GMT"));` or via the commandline switch `-Duser.timezone=GMT`.
 
 Technical details: Spring Boot 1.4.2, JPA 2.1, Hibernate 5.2.3
 
