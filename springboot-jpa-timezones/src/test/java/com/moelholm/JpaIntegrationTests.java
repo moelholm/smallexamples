@@ -39,10 +39,10 @@ public class JpaIntegrationTests {
     // Given
     //
 
-    // 1) This is the time we will insert
+    // 1) This is the datetime we will insert
     LocalDateTime localDateTime = LocalDateTime.of(2017, Month.JANUARY, 1, 0, 0, 0);
 
-    // 2) This is the time we expect the database to receive
+    // 2) This is the datetime we expect the database to receive
     LocalDateTime gmtDateTime = LocalDateTime.of(2016, Month.DECEMBER, 31, 22, 0, 0);
 
     //
@@ -60,7 +60,7 @@ public class JpaIntegrationTests {
     // 1) Datetime is unchanged
     assertThat(fromDatabase.getCreated()).isEqualTo(localDateTime);
 
-    // 2) We expect the database to store the date in the GMT timezone ( == UTC )
+    // 2) We expect the database to store the datetime in the GMT timezone ( == UTC )
     jdbcTemplate.query("select " + formatDate(e, "created") + " from message", rs -> {
       assertThat(LocalDateTime.parse(rs.getString(1))).isEqualTo(gmtDateTime);
     });

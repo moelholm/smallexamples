@@ -42,10 +42,10 @@ public class JdbcIntegrationTests {
     //    > Ignored when using useLegacyDatetimeCode=true (which is default for MariaDB) <
     Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
 
-    // 2) This is the time we will insert
+    // 2) This is the datetime we will insert
     LocalDateTime localDateTime = LocalDateTime.of(2017, Month.JANUARY, 1, 0, 0, 0);
 
-    // 3) This is the time we expect the database to receive
+    // 3) This is the datetime we expect the database to receive
     LocalDateTime gmtDateTime = LocalDateTime.of(2016, Month.DECEMBER, 31, 22, 0, 0);
 
     //
@@ -61,12 +61,12 @@ public class JdbcIntegrationTests {
     // Then
     //
 
-    // 1) We expect to get the time back in the JVM's timezone:
+    // 1) We expect to get the datetime back in the JVM's timezone:
     jdbcTemplate.query("select * from message", rs -> {
       assertThat(rs.getTimestamp("created", cal).toLocalDateTime()).isEqualTo(localDateTime);
     });
 
-    // 2) We expect the database to store the date in the GMT timezone ( == UTC )
+    // 2) We expect the database to store the datetime in the GMT timezone ( == UTC )
     jdbcTemplate.query("select " + formatDate(e, "created") + " from message", rs -> {
       assertThat(LocalDateTime.parse(rs.getString(1))).isEqualTo(gmtDateTime);
     });
