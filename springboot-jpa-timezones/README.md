@@ -38,4 +38,4 @@ Look at `src/main/java/com/moelholm/JpaIntegrationTests.java`. This class contai
  
 Look at `src/main/java/com/moelholm/JdbcIntegrationTests.java`. This class contains a test that illustrates what Hibernate does under the cover: Effectively passing a timezone aware `Calendar` instance to the underlying JDBC API. 
 
-*TIP: * If you use MariaDB (like this example) or MySQL then you could also just append `&serverTimezone=GMT` to the database URL. In other words: You really don't need to use the Hibernate specific timezone configuration.
+*TIP:* If you use MariaDB (like this example) or MySQL then you could also just append `&serverTimezone=GMT` to the database URL. In other words: You really don't need to use the Hibernate specific timezone configuration.
