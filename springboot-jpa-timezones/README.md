@@ -32,6 +32,10 @@ Look at `src/main/resources/application.yml`.
  - Notice  `spring.jpa.properties.hibernate.jdbc.time_zone:UTC`. This is how we instruct Hibernate to serialize timestamps into UTC.
  - Notice `?useLegacyDatetimeCode=false` in the database URL. This is IMPORTANT if you want the Hibernate configuration to work.
  
-So basically we use Hibernate specific configuration to force dates to be serialized in UTC/GMT. 
+So basically we use Hibernate specific configuration to force dates to be serialized in UTC/GMT.
+ 
+Look at `src/main/java/com/moelholm/JpaIntegrationTests.java`. This class contains a test that documents the effect of the Hibernate UTC/GMT configuration.
+ 
+Look at `src/main/java/com/moelholm/JdbcIntegrationTests.java`. This class contains a test that illustrates what Hibernate does under the cover: Effectively passing a timezone aware `Calendar` instance to the underlying JDBC API. 
 
 If you use MariaDB (like this example) or MySQL then you could also just append `&serverTimezone=GMT` to the database URL.
