@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDateTime;
@@ -18,7 +17,6 @@ import java.util.TimeZone;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ActiveProfiles({"utc", "mariadb"}) // TIP: Remove 'mariadb' to run with H2 instead
 public class JpaIntegrationTests {
 
   static {

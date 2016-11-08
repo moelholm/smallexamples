@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.4.2.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.4.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -17,20 +17,34 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 // So we get Hibernates time zone configuration option (released October 2016):
 ext['hibernate.version'] = '5.2.3.Final'
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	// So that we have support for an in memory H2 database
-	runtime('com.h2database:h2:1.4.193')
+    // So that we have support for an in memory H2 database:
+    runtime('com.h2database:h2:1.4.193')
 
-	// So that we have support for an external MariaDB database:
-	runtime('org.mariadb.jdbc:mariadb-java-client:1.5.4')
+    // So that we have support for an external MariaDB database:
+    runtime('org.mariadb.jdbc:mariadb-java-client:1.5.4')
+}
+
+// So that when you run './gradlew test' then you use H2 and Hibernate UTC adjustment:
+test {
+    useJUnit {
+        systemProperty "spring.profiles.active", "utc,h2"
+    }
+}
+
+// So that when you run './gradlew testWithMariaDb' then you use MariaDB and Hibernate UTC adjustment:
+task testWithMariaDb(type: Test) {
+    useJUnit {
+        systemProperty "spring.profiles.active", "utc,mariadb"
+    }
 }

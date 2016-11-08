@@ -10,7 +10,7 @@ Technical details: Spring Boot 1.4.2, JPA 2.1, Hibernate 5.2.3
 
 ### Run
 
-Launch database with docker
+Launch database (MariaDB ~= MySQL) with docker
 
     cd src/database
     
@@ -20,9 +20,12 @@ Launch database with docker
     
 Run tests
 
-    ./gradlew test
+    ./gradlew clean testWithMariaDb
     
+Alternatively run tests with H2:
     
+    ./gradlew clean test
+
 ### About
     
 Look at `build.gradle`. Notice how Hibernate is upgraded to v5.2.3.Final.
