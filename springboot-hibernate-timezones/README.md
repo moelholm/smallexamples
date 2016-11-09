@@ -1,4 +1,4 @@
-# Spring Boot and JPA: Controlling time zones
+# Spring Boot and Hibernate: Controlling time zones
 
 This example shows how you can control the time zone used when saving/loading "temporal" JPA entity properties.
 
