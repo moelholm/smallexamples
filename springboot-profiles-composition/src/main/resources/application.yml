@@ -1,0 +1,12 @@
+
+---
+spring:
+  profiles: development
+
+spring.profiles.include: development-service , development-repository
+
+---
+spring:
+  profiles: test
+
+spring.profiles.include: test-service , test-repository
