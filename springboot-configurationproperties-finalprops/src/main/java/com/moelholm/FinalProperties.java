@@ -12,7 +12,7 @@ public class FinalProperties {
 
   // You are now in "on-your-own" territory :)
 
-  // Spring Boot reference manual doesn't suggest this idiom....
+  // The Spring Boot reference manual doesn't suggest this idiom....
 
   private final List<String> messages = new LinkedList<>();
 
