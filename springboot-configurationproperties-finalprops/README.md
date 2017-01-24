@@ -10,6 +10,6 @@
 
 If you run `ConfigurationPropertiesTests` you will see that `testFinalProperties` fails - since it doesn't pick up the OS environment variable you configured before the tests was run.
 
-The final `List` member in `FinalProperties` behaves different than for the `NormalProperties`.
+The final `List` member in `FinalProperties` behaves different than the `List` member in `NormalProperties`.
 
 Probably works as expected...
