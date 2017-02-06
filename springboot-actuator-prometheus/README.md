@@ -1,4 +1,4 @@
-# Using the Prometheus Spring Boot Stater
+# Using the Prometheus Spring Boot Starter
 
 Firstly, take a look at the Gradle script - that's where the starter is imported.
 
