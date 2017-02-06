@@ -23,7 +23,7 @@ repositories {
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-actuator'
 	compile 'org.springframework.boot:spring-boot-starter-web'
-	compile 'com.moelholm:prometheus-spring-boot-starter:1.0.0'
+	compile 'com.moelholm:prometheus-spring-boot-starter:1.0.1'
 
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
