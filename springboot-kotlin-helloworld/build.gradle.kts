@@ -1,4 +1,3 @@
-
 val springBootVersion = "1.5.2.RELEASE"
 val kotlinVersion = "1.1.0"
 
@@ -9,7 +8,6 @@ buildscript {
         gradleScriptKotlin()
     }
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
