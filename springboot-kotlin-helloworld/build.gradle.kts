@@ -9,7 +9,6 @@ buildscript {
         gradleScriptKotlin()
     }
     dependencies {
-//        classpath(kotlinModule("gradle-plugin"))
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
@@ -27,11 +26,9 @@ repositories {
     gradleScriptKotlin()
 }
 
-//sourceCompatibility = 1.8
-//targetCompatibility = 1.8
 dependencies {
-    compile(kotlinModule("stdlib"))
+    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
 }
-
