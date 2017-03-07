@@ -1,21 +1,28 @@
-// TODO: Investigate how to get rid of one of these two property sets:
-val springBootVersion = "1.5.2.RELEASE"
-val kotlinVersion = "1.1.0"
-
 buildscript {
-    // TODO: Investigate how to get rid of one of these two property sets:
-    val springBootVersion = "1.5.2.RELEASE"
-    val kotlinVersion = "1.1.0"
+
+    // 1 of 2: Define properties here...
+    var springBootVersion: String by extra
+    springBootVersion = "1.5.2.RELEASE"
+
+    var kotlinVersion: String by extra
+    kotlinVersion = "1.1.0"
+
     repositories {
         gradleScriptKotlin()
 
     }
+
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
     }
+
 }
+
+// 2 of 2: Bring properties into scope again here...
+val kotlinVersion: String by extra
+val springBootVersion: String by extra
 
 apply {
     plugin("kotlin")
