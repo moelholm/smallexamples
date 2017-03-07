@@ -1,11 +1,14 @@
+// TODO: Investigate how to get rid of one of these two property sets:
 val springBootVersion = "1.5.2.RELEASE"
 val kotlinVersion = "1.1.0"
 
 buildscript {
+    // TODO: Investigate how to get rid of one of these two property sets:
     val springBootVersion = "1.5.2.RELEASE"
     val kotlinVersion = "1.1.0"
     repositories {
         gradleScriptKotlin()
+
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
