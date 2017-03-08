@@ -4,7 +4,9 @@ This example shows how you can create a Spring Boot 1.5 project that is based on
 
 ### Kotlin in the Code
 
+Take a look at `src/main/kotlin`: You will find a super simple Spring MVC controller.
 
+Take a look at `src/test/kotlin`: You will find a super simple Spring Boot integration test of the controller.
 
 ### Kotlin in the Gradle build script
 

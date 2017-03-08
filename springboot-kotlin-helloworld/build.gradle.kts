@@ -1,15 +1,11 @@
 buildscript {
 
-    // 1 of 2: Define properties here...
-    var springBootVersion: String by extra
-    springBootVersion = "1.5.2.RELEASE"
-
+    val springBootVersion = "1.5.2.RELEASE"
     var kotlinVersion: String by extra
     kotlinVersion = "1.1.0"
 
     repositories {
-        gradleScriptKotlin()
-
+        mavenCentral()
     }
 
     dependencies {
@@ -20,9 +16,7 @@ buildscript {
 
 }
 
-// 2 of 2: Bring properties into scope again here...
 val kotlinVersion: String by extra
-val springBootVersion: String by extra
 
 apply {
     plugin("kotlin")
@@ -31,12 +25,12 @@ apply {
 }
 
 repositories {
-    gradleScriptKotlin()
+    mavenCentral()
 }
 
 dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
-    testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
