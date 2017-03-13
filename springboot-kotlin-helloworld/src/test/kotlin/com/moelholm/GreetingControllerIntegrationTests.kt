@@ -16,7 +16,7 @@ class GreetingControllerIntegrationTests {
     lateinit var restTemplate: TestRestTemplate
 
     @Test
-    fun get_whenInvokedWithDuke_thenReturnsHelloDuke() {
+    fun `GET when given Duke then returns "Hello, Duke"`() {
 
         // Given
         val name = "Duke"
