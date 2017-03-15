@@ -1,0 +1,65 @@
+buildscript {
+    ext {
+        kotlinVersion = '1.1.1'
+        wildflyVersion = '10.1.0.Final'
+        wildflyHome = "${rootDir}/build/unpacked/dist/wildfly-${wildflyVersion}"
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
+    }
+}
+
+configurations {
+    install
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: "kotlin-allopen"
+apply plugin: 'war'
+
+allOpen {
+    annotation("javax.ejb.Stateless")
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repository.jboss.org/nexus/content/groups/public-jboss' }
+    maven { url 'https://repository.jboss.org/nexus/content/repositories' }
+    maven { url 'https://repository.jboss.org/nexus/content/repositories/thirdparty-releases' }
+}
+
+dependencies {
+    providedCompile 'javax:javaee-api:7.0'
+
+    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.jboss.arquillian:arquillian-bom:1.1.12.Final'
+    testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.12.Final'
+
+    testRuntime "org.wildfly.arquillian:wildfly-arquillian-container-managed:2.0.2.Final"
+    testRuntime 'org.jboss.logging:jboss-logging:3.1.4.GA'
+
+    install "org.wildfly:wildfly-dist:${wildflyVersion}@zip"
+}
+
+test {
+    environment 'JBOSS_HOME', rootProject.wildflyHome
+    systemProperty 'java.util.logging.manager', 'org.jboss.logmanager.LogManager'
+}
+
+task unzipWildFlyAppServer(type: Copy) {
+    from zipTree(configurations.install.singleFile)
+    into file("${buildDir}/unpacked/dist")
+    tasks.test.dependsOn unzipWildFlyAppServer
+}
