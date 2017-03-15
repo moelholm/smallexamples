@@ -1,0 +1,7 @@
+= Java EE 7 :: Hello World, Kotlin
+
+This project shows how you can use Kotlin as the programming language in your Java EE 7 application.
+
+The project uses WildFly 10.0.1 as the application server.
+
+Arquillian is used for testing.
