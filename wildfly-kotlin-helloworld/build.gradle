@@ -11,6 +11,7 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion"
     }
 }
 
@@ -21,10 +22,16 @@ configurations {
 apply plugin: 'java'
 apply plugin: 'kotlin'
 apply plugin: "kotlin-allopen"
+apply plugin: "kotlin-noarg"
 apply plugin: 'war'
 
 allOpen {
     annotation("javax.ejb.Stateless")
+    annotation("javax.ws.rs.Path")
+}
+
+noArg {
+    annotation("javax.ws.rs.Path")
 }
 
 sourceCompatibility = 1.8
@@ -49,6 +56,7 @@ dependencies {
 
     testRuntime "org.wildfly.arquillian:wildfly-arquillian-container-managed:2.0.2.Final"
     testRuntime 'org.jboss.logging:jboss-logging:3.1.4.GA'
+    testRuntime 'org.jboss.resteasy:resteasy-client:3.1.1.Final'
 
     install "org.wildfly:wildfly-dist:${wildflyVersion}@zip"
 }

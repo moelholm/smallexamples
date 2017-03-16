@@ -5,3 +5,14 @@ This project shows how you can use Kotlin as the programming language in your Ja
 The project uses WildFly 10.0.1 as the application server.
 
 Arquillian is used for testing.
+
+== What Java EE 7 functionality is being used?
+
+First of all this is a WAR module. It comes with:
+
+- An EJB (`@Stateless`)
+- A JAX-RS resource
+
+There is an Arquillian based integration test class for each component.
+
+The JAX-RS resource test class uses the JAX-RS client API.
