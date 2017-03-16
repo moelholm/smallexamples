@@ -34,7 +34,6 @@ class HelloResourceIntegrationTests {
                 .request()
                 .get(String::class.java)
 
-
         // Then
         assertEquals("Hello, Duke", message)
 
