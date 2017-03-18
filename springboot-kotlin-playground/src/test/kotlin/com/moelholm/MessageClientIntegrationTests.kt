@@ -25,8 +25,8 @@ class MessageClientIntegrationTests {
             val messages = messageClient.getMessages()
 
             assertThat(messages.size).isEqualTo(2)
-            assertThat(messages).extracting { it.id }.containsAll(listOf("1", "2"))
-            assertThat(messages).extracting { it.text }.containsAll(listOf("Hello World", "Hej Verden"))
+            assertThat(messages).extracting { it.id }.contains("1", "2")
+            assertThat(messages).extracting { it.text }.contains("Hello World", "Hej Verden")
 
         }
 
