@@ -26,6 +26,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
     maven { url "https://repo.spring.io/snapshot" }
     maven { url "https://repo.spring.io/milestone" }
 }
@@ -33,6 +34,8 @@ repositories {
 dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
     compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+    compile('org.jetbrains.kotlinx:kotlinx-coroutines-core:0.14')
+
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.flywaydb:flyway-core')

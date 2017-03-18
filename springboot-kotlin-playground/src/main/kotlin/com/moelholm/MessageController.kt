@@ -11,7 +11,8 @@ import javax.annotation.PostConstruct
 class MessageController(val messageRepository: MessageRepository) {
 
     @PostConstruct
-    fun postConstruct() = messageRepository.save(Message("1", "Hello World"))
+    fun postConstruct() = messageRepository.save(
+            listOf(Message("1", "Hello World"), Message("2", "Hej Verden")))
 
     @GetMapping
     fun list() = messageRepository.findAll()
