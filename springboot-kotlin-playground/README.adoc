@@ -1,0 +1,3 @@
+= Spring Boot :: Kotlin Playground
+
+A little weird project showcasing miscellaneous fun Kotlin language features within a Spring Boot 2 context.
