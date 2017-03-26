@@ -1,6 +1,6 @@
 package com.moelholm
 
-class Three {
+class First {
 
   var messageOne: String = "one"
 
