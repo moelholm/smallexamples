@@ -16,7 +16,7 @@ public class FirstTests {
 
     assertThat(first.getMessageOne()).isEqualTo("Hello from Java");
 
-    assertThat(first.getMessageTwo()).isNull();
+    assertThat(first.getMessageTwo()).isEqualTo("two");
 
   }
 

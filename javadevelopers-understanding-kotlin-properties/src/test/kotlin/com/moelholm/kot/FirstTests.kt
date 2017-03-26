@@ -9,13 +9,13 @@ class FirstTests {
   @Test
   fun test() {
 
-    val three = First()
+    val first = First()
 
-    three.messageOne = "Hello from Kotlin"
+    first.messageOne = "Hello from Kotlin"
 
-    assertThat(three.messageOne).isEqualTo("Hello from Kotlin")
+    assertThat(first.messageOne).isEqualTo("Hello from Kotlin")
 
-    assertThat(three.messageTwo).isNull()
+    assertThat(first.messageTwo).isEqualTo("two")
 
   }
 
