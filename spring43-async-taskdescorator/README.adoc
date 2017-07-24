@@ -1,6 +1,6 @@
 # Spring 4.3 :: Using a TaskDecorator with @Async functionality
 
-This project demonstrates how you can use a TaskDecorator to transparently copy MDC data from a Web thread onto @Async method threads.
+This project demonstrates how you can use a `TaskDecorator` to transparently copy MDC data from Web threads onto `@Async` method threads.
 
 Take a look at the integration tests to see what is expected of the code.
 Notice how we expect MDC data to appear with the Web thread logging and with the @Async thread's logging.
