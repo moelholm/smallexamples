@@ -3,7 +3,7 @@
 This project demonstrates how you can use a `TaskDecorator` to transparently copy MDC data from Web threads onto `@Async` method threads.
 
 Take a look at the integration tests to see what is expected of the code.
-Notice how we expect MDC data to appear with the Web thread logging and with the @Async thread's logging.
+Notice how we expect MDC data to appear with the Web thread logging and with the `@Async` thread logging.
 
 Then see `com.moelholm.async.demo.MdcFilter`: this is where the original MDC data comes from.
 Then see `com.moelholm.async.demo.Application`: notice how we tune the @Async behavior in Spring to use a custom `TaskDecorator`.
