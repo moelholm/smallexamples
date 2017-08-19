@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+group 'com.moelholm'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+ext {
+    camelVersion = '2.19.2'
+    logbackVersion = '1.2.3'
+    slf4jVersion = '1.7.25'
+}
+
+dependencies {
+
+    compile group: 'org.apache.camel', version: camelVersion, name: 'camel-core'
+
+    compile group: 'org.slf4j', version: slf4jVersion, name: 'slf4j-api'
+    compile group: 'ch.qos.logback', version: logbackVersion, name: 'logback-classic'
+    compile group: 'ch.qos.logback', version: logbackVersion, name: 'logback-core'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
