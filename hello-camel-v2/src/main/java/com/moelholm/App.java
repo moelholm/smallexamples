@@ -17,7 +17,7 @@ public class App {
             .process(exchange -> {
               System.out.format("  %s%n", exchange.getIn().getBody());
             })
-            .filter(body().convertTo(String.class).contains("uke"))
+            .filter(body().convertToString().contains("uke"))
             .marshal()
             .json(JsonLibrary.Gson)
             .to("file:data/outbox");
