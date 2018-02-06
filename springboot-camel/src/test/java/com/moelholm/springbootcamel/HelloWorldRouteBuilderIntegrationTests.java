@@ -20,9 +20,6 @@ public class HelloWorldRouteBuilderIntegrationTests {
   @Produce(uri = HelloWorldRouteBuilder.ROUTE_URI)
   private ProducerTemplate producerTemplate;
 
-  @Autowired
-  private CamelContext camelContext;
-
   @Test
   public void whenGivenDuke_thenSetsGreetingInBody() {
 

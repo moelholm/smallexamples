@@ -1,0 +1,14 @@
+# Spring Boot :: Camel
+
+This example shows a very simple application mixing Spring Boot with Apache Camel.
+
+## Worth noticing
+Take a look at `build.gradle`: The example pulls in Apache Camels Spring Boot starter module. With that
+we get a lot of functionality out of the box. For example the `CamelContext`...
+
+There is a single (direct) route and a corresponding integration test.
+
+The route reads an external property and uses Apache Camel's simple expression language to enrich
+the incoming Exchange body. The result is placed in the IN `Message` body.
+
+The integration test shows that we can inject a `ProducerTemplate` and use it to invoke the route.
