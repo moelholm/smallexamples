@@ -2,14 +2,10 @@ package com.moelholm.springbootcamel;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-import org.apache.camel.CamelContext;
-import org.apache.camel.Exchange;
 import org.apache.camel.Produce;
 import org.apache.camel.ProducerTemplate;
-import org.apache.camel.builder.ExchangeBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -30,7 +26,6 @@ public class HelloWorldRouteBuilderIntegrationTests {
     String body = producerTemplate.requestBody((Object) caller, String.class);
 
     // Then
-    //String body = result.getIn().getBody(String.class);
     assertThat(body).isEqualTo("Hi Duke! You are so cool 😎");
   }
 

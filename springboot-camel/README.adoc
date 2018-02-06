@@ -9,6 +9,6 @@ we get a lot of functionality out of the box. For example the `CamelContext`...
 There is a single (direct) route and a corresponding integration test.
 
 The route reads an external property and uses Apache Camel's simple expression language to enrich
-the incoming Exchange body. The result is placed in the IN `Message` body.
+the incoming `Exchange` body. The result is placed in the IN `Message` body.
 
 The integration test shows that we can inject a `ProducerTemplate` and use it to invoke the route.
