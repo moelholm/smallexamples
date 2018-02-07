@@ -1,4 +1,4 @@
-# Spring Boot :: Camel
+# Spring Boot :: Apache Camel
 
 This example shows a very simple application mixing Spring Boot with Apache Camel.
 
