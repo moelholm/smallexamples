@@ -1,0 +1,9 @@
+# Spring Boot :: Apache Camel Redelivery
+
+This example shows how Apache Camel handles redeliveries: _redelivery starts from the point of failure_.
+
+## Worth noticing
+The integration test in `HelloWorldRedeliveryRouteBuilderIntegrationTests` documents this behavior.
+
+Take a look at the camel route `HelloWorldRedeliveryRouteBuilder` and how it uses the
+collaborating Spring bean `CamelFriend`.
