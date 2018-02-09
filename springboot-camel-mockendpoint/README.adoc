@@ -3,4 +3,4 @@
 This example shows how Apache Camels `MockEndpoint` can be used - and also a slightly interesting behavior regarding what it "can see".
 
 ## Worth noticing
-The `MockEndpoint` doesn't return a reference to the `Exchange` it sees. It is not _the_ `Exchange` ... but rather: a copy of it.
+The `MockEndpoint` doesn't capture a reference to the `Exchange` it sees. It is not _the_ `Exchange` ... but rather: a copy of it.
