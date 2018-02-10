@@ -1,4 +1,4 @@
-# Spring Boot :: Apache Camel Mockendpoint
+# Spring Boot :: Apache Camel MockEndpoint
 
 This example shows how Apache Camels `MockEndpoint` can be used - and also a slightly interesting behavior regarding what it "can see".
 
