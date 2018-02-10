@@ -4,5 +4,5 @@ This example shows a very simple application mixing Spring Boot with Apache Came
 
 ## Worth noticing
 When you are in Kotlin land you are given string interpolation support...
-based on the $ character. Apache Camel loves that as well - so you need to escape it in your `simple expressions. Small stuff though.
+based on the $ character. Apache Camel loves that as well - so you need to escape it in your `simple expressions`. Small stuff though.
 You can see that in action in the route builder.
