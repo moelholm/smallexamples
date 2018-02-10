@@ -1,2 +1,2 @@
 app:
-  greeting.message: Hi ${dollarSign:$}{body}! You are so cool 😎
+  greeting.message: Hi ${dollarSign:$}{body}! You are so cool

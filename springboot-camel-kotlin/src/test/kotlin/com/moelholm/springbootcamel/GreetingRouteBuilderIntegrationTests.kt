@@ -25,7 +25,7 @@ class GreetingRouteBuilderIntegrationTests {
         val body = producerTemplate.requestBody(caller as Any, String::class.java)
 
         // Then
-        assertThat(body).isEqualTo("Hi Kotlin! You are so cool 😎")
+        assertThat(body).isEqualTo("Hi Kotlin! You are so cool !")
     }
 
 }

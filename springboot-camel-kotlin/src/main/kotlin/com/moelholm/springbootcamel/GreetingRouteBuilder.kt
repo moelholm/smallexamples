@@ -14,7 +14,7 @@ class GreetingRouteBuilder : RouteBuilder() {
 
             // Kotlin and Camel both love the $ character: So help Kotlin
             // know that it shouldn't attempt to process it
-            .setBody().simple("\$simple{body}")
+            .setBody().simple("\$simple{body} !")
 
             .to("log:/dev/null")
 
