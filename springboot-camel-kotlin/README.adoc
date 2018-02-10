@@ -1,0 +1,12 @@
+# Spring Boot :: Apache Camel :: Kotlin style
+
+This example shows a very simple application mixing Spring Boot with Apache Camel using Kotlin source code.
+
+## Worth noticing
+At the time of creating this example Apache Camel didn't provide a recent Spring Boot 2 compatible starter
+(release `2.20.2` comes with some auto configuration that uses obsolete Spring Boot 2 class(es)).
+So this example is based on an earlier Spring Boot starter drop: `2.17.0`.
+
+Also when you are in the wonderful Kotlin land you are given string interpolation support...
+based on the $ character. Apache Camel loves that as well - so you need to escape it in your `simple expressions. Small stuff though.
+You can see that in action in the route builder.
