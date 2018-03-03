@@ -1,0 +1,7 @@
+# Apache Camel :: Custom DSL - Baby Steps
+
+This is just a few hacks that shows how we - to some degree - can
+mixin our own custom Java DSL into Apache Camel.
+
+The custom DSL doesn't work on Camel DSL elements that are complex like `SplitDefinition` for example
+... that is subject for further investigation =:)
