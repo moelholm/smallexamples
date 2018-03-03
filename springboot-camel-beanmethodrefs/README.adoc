@@ -1,0 +1,6 @@
+# Apache Camel :: Custom Bean DSL - Baby Steps
+
+This is just a few hacks that shows how Apache Camel could introduce
+typesafe bean method invocation using Java 8 method references.
+
+Just quick and dirty =:)
