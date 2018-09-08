@@ -9,7 +9,9 @@ This example showcase the following problem:
 
 See `BadGreeterServiceTests` for a demo of the problem.
 
-See `AwesomeGreeterServiceTests` for a solution solution to it.
+See `AwesomeGreeterServiceTests` for a solution solution to it. The solution is simply to wrap your
+mock inside a `FactoryBean`. This ensures that Spring doesn't initialize it (performing injection and
+calling `@PostConstruct`.
 
 ## Try it out
 Run:

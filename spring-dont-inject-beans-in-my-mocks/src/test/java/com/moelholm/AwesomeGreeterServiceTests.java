@@ -19,12 +19,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = AwesomeTestConfig.class)
 public class AwesomeGreeterServiceTests {
 
-  // Spring can load this configuration, because it doesn't attempt
-  // to wire "AnnoyingBean" INTO "GreeterDao".
-  //
-
   @Autowired
   private GreeterService greeterService;
+
   @Autowired
   private GreeterDao greeterDaoMock;
 
@@ -40,6 +37,9 @@ public class AwesomeGreeterServiceTests {
     // Then
     assertThat(greeting).matches("Hola contigo, Duke");
   }
+
+  // Spring can load this configuration, because it doesn't attempt
+  // to wire "AnnoyingBean" INTO "GreeterDao".
 
   @Configuration
   static class AwesomeTestConfig {

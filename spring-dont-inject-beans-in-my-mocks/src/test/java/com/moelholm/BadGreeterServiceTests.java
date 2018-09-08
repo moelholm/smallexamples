@@ -17,6 +17,25 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = BadTestConfig.class)
 public class BadGreeterServiceTests {
 
+  @Autowired
+  private GreeterService greeterService;
+
+  @Autowired
+  private GreeterDao greeterDaoMock;
+
+  @Test
+  public void sayHello() {
+
+    // Given
+    when(greeterDaoMock.findGreeting()).thenReturn("Hola contigo, %s");
+
+    // When
+    String greeting = greeterService.sayHello("Duke");
+
+    // Then
+    assertThat(greeting).matches("Hola contigo, Duke");
+  }
+
   // Spring cannot load this configuration, because it attempts
   // to wire "AnnoyingBean" INTO "GreeterDao".
   //
@@ -40,25 +59,6 @@ public class BadGreeterServiceTests {
 
       return mock(GreeterDao.class);
     }
-  }
-
-  @Autowired
-  private GreeterService greeterService;
-
-  @Autowired
-  private GreeterDao greeterDaoMock;
-
-  @Test
-  public void sayHello() {
-
-    // Given
-    when(greeterDaoMock.findGreeting()).thenReturn("Hola contigo, %s");
-
-    // When
-    String greeting = greeterService.sayHello("Duke");
-
-    // Then
-    assertThat(greeting).matches("Hola contigo, Duke");
   }
 
 }
