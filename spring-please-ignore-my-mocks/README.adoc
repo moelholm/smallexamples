@@ -1,0 +1,20 @@
+# Spring Framework :: Make Spring ignore your mocks
+
+This example showcase the following problem:
+
+    When you mock a Spring bean in your integration test, and if the mock is based on a class
+    and not an interface, then Spring attempts to autowire any dependencies it may have. Spring
+    also attempts to invoke any `@PostConstruct` initializers that it may have. But ... you just
+    want to mock that d**n bean, right?
+
+See `BadGreeterServiceTests` for a demo of the problem.
+
+See `AwesomeGreeterServiceTests` for the solution to it: Simply wrap your mock inside a `FactoryBean`.
+This ensures that Spring doesn't initialize it (performing injection and calling `@PostConstruct` methods).
+
+## Try it out
+Run:
+
+    ./gradlew test
+
+Notice that only the test suite approach with a `FactoryBean` works.
