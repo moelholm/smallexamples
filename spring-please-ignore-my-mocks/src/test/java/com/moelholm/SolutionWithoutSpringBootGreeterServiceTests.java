@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.moelholm.AwesomeGreeterServiceTests.AwesomeTestConfig;
+import com.moelholm.SolutionWithoutSpringBootGreeterServiceTests.AwesomeTestConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.FactoryBean;
@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AwesomeTestConfig.class)
-public class AwesomeGreeterServiceTests {
+public class SolutionWithoutSpringBootGreeterServiceTests {
 
   @Autowired
   private GreeterService greeterService;
@@ -53,8 +53,9 @@ public class AwesomeGreeterServiceTests {
     FactoryBean<GreeterDao> greeterDao() {
       // This is our collaborator that we just want to mock
 
-      // ... spring will NOT post process it's @Autowired
-      // ... field, because we juse a bean factory
+      // ... spring will NOT post process its @Autowired
+      // ... field and NOT invoke the @PostConstruct method,
+      // ... because we use a BeanFactory to produce our bean
 
       return new AbstractFactoryBean<GreeterDao>() {
         @Override

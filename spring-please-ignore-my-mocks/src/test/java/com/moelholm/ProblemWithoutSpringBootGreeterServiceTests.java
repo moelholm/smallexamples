@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import com.moelholm.BadGreeterServiceTests.BadTestConfig;
+import com.moelholm.ProblemWithoutSpringBootGreeterServiceTests.BadTestConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BadTestConfig.class)
-public class BadGreeterServiceTests {
+public class ProblemWithoutSpringBootGreeterServiceTests {
 
   @Autowired
   private GreeterService greeterService;

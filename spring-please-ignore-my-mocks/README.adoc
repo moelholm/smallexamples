@@ -1,20 +1,30 @@
 # Spring Framework :: Make Spring ignore your mocks
+If you using the core Spring Framework (that is, not Spring Boot), then you may have encountered a problem where Spring doesn't seem
+to completely ignore mocked beans in your tests: Perhaps Spring attempts to inject beans into them or run your `@PostConstruct` lifecycle methods.
 
-This example showcase the following problem:
+If you are using Spring Boot and have this behavior. Then there is a big chance that you are holding it wrong.
 
-    When you mock a Spring bean in your integration test, and if the mock is based on a class
-    and not an interface, then Spring attempts to autowire any dependencies it may have. Spring
-    also attempts to invoke any `@PostConstruct` initializers that it may have. But ... you just
-    want to mock that d**n bean, right?
+== About the problem
+Firstly: *You shouldn't have this problem with Spring Boot. If you do, then you are not using `@MockBean` based mocks*.
+See the next section for how you should be using mocks with Spring Boot.
 
-See `BadGreeterServiceTests` for a demo of the problem.
+When you mock a Spring bean in your non-Spring Boot tests, and if the mock is based on a class
+and not an interface, then Spring attempts to autowire any dependencies it may have. Spring
+also attempts to invoke any `@PostConstruct` initializers that it may have. But ... you just
+want to mock that d**n bean, right?
 
-See `AwesomeGreeterServiceTests` for the solution to it: Simply wrap your mock inside a `FactoryBean`.
+See `ProblemWithoutSpringBootGreeterServiceTests` for a demo of the problem.
+
+== Solution: Spring Boot based code
+With Spring Boot you just have to mock your beans using the `MockBean` annotation.
+
+See `SpringBootPoweredGreeterServiceTests` for a very elegant solution.
+
+== Solution: Core Spring Framework based code
+See `SolutionWithoutSpringBootGreeterServiceTests` for the solution to it: Simply wrap your mock inside a `FactoryBean`.
 This ensures that Spring doesn't initialize it (performing injection and calling `@PostConstruct` methods).
 
-## Try it out
+== Try it out
 Run:
 
     ./gradlew test
-
-Notice that only the test suite approach with a `FactoryBean` works.
