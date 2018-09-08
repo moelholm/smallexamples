@@ -1,6 +1,6 @@
 = Spring Framework :: Make Spring ignore your mocks
 
-If you using the core Spring Framework (that is, not Spring Boot), then you may have encountered a problem where Spring doesn't seem
+If you are using the core Spring Framework (that is, not Spring Boot), then you may have encountered a problem where Spring doesn't seem
 to completely ignore mocked beans in your tests: Perhaps Spring attempts to inject beans into them or run your `@PostConstruct` lifecycle methods.
 
 If you are using Spring Boot and have this behavior. Then there is a big chance that you are holding it wrong.
