@@ -57,7 +57,7 @@ public class ProblemWithoutSpringBootGreeterServiceTests {
       // ... spring will post process GreeterDaos @Autowired
       // ... field, leading to the failure of this entire test suite
 
-      // ... you can get pass this obstacle by using constructor injection
+      // ... you can get past this obstacle by using constructor injection
 
       // ... but even if you use constructor injection, the test suite still
       // ... still fails: because Spring calls the @PostConstruct method
