@@ -1,0 +1,19 @@
+# Spring Framework :: Ensuring that Spring doesn't inject beans in your mocks
+
+This example showcase the following problem:
+
+    When you mock a Spring bean in your integration test, and if the mock is based on a class
+    and not an interface, then Spring attempts to autowire any dependencies it may have.
+
+    You *just* want to mock it and shouldn't care about any dependencies of the mock, right?
+
+See `BadGreeterServiceTests` for a demo of the problem.
+
+See `AwesomeGreeterServiceTests` for a solution solution to it.
+
+## Try it out
+Run:
+
+    ./gradlew test
+
+Notice that only the test suite approach with a `FactoryBean` works.
