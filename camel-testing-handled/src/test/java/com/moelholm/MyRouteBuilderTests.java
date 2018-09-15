@@ -36,7 +36,7 @@ public class MyRouteBuilderTests {
         .build());
 
     // Then
-    // ...... An Exception HAS BEEN handled if doesn't have an Exception on the Exchange
+    // ...... An Exception has been handled if it is NOT in Exchange::exception
     assertThat(exchange.getException()).isNull();
     // ...... But there is still evidence of it
     assertThat(exchange.getProperty(EXCEPTION_CAUGHT))
@@ -55,7 +55,7 @@ public class MyRouteBuilderTests {
         .build());
 
     // Then
-    // ...... An Exception has NOT been handled if it is on the Exchange
+    // ...... An Exception has NOT been handled if it IS in Exchange::exception
     assertThat(exchange.getException()).isExactlyInstanceOf(IllegalArgumentException.class);
     //
     assertThat(exchange.getProperty(EXCEPTION_CAUGHT))
