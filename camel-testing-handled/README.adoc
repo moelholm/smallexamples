@@ -1,0 +1,8 @@
+= Apache Camel :: How to test that an Exception got handled
+
+This example demonstrates how you can write JUnit tests that verifies if Camel has handled an exception.
+
+Take a look at `MyRouteBuilder`: it allows the caller to control which Exception is thrown.
+Pay attention to the `handled(true)` and `handled(false)` variations when the Exceptions are caught.
+
+Finally, check out the result of this behavior on the Exchange  - see `MyRouteBuilderTests`.
