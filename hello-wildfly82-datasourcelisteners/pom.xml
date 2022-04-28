@@ -8,7 +8,7 @@
 	<properties>
 		<version.junit>4.11</version.junit>
 		<version.arquillian>1.1.5.Final</version.arquillian>
-		<version.wildfly>8.2.0.Final</version.wildfly>
+		<version.wildfly>23.0.2.Final</version.wildfly>
 		<version.javax.jee.api>7.0</version.javax.jee.api>
 	</properties>
 
